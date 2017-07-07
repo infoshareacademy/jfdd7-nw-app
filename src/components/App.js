@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom'
 import CategoriesMain from './CategoriesMain'
+import SearchMain from './SearchMain'
 export default class App extends React.Component {
 
 
@@ -11,6 +12,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <div>
+          <SearchMain />
           <CategoriesMain/>
         </div>
       </Router>
