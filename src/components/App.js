@@ -3,10 +3,9 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import ProductPageView from "./ProductPageView"
 import CategoriesMain from './CategoriesMain'
-import SearchMain from './SearchMain'
-
 import Home from './Home'
-
+import ResultView from './ResultsView'
+import SearchMain from './SearchMain'
 import Footer from './Footer'
 export default class App extends React.Component {
 
@@ -16,8 +15,9 @@ export default class App extends React.Component {
     return (
       <Router>
         <div>
-          <Home />
+          <Home/>
           <SearchMain />
+          <Route path="/result-view" component={ResultView}/>
           <Route exact path="/" component={CategoriesMain}/>
           <Route path="/product-page-view" component={ProductPageView}/>
           <Footer />
