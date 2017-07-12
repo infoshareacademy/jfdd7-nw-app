@@ -35,13 +35,17 @@ class ResultsView extends React.Component {
         { fetching === false ? null : <p>Fetching data...</p>}
         {
           data !== null && uniqBy(data.map(
-            shop => shop.products
+            shop => shop.products,
+
           ).reduce(
-            (total, next) => total.concat(next), []
-          ), 'name').filter(product => product.name.includes(this.props.searchPhrase)).map(
+
+            (total, next) => total.concat(next), [],
+
+          ), 'name').filter(
+            product => product.name.includes(this.props.searchPhrase)
+          ).sort((a,b) => a.price > b.price)  .map(
             product =><Grid>
                 <Col sm={3} className="resultPhoto">
-                    <div></div>
                 </Col>
                 <Col sm={6}>
                     <div>
