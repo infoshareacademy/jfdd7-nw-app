@@ -90,7 +90,7 @@ export default connect(
                   shop => shop.products
                 ).reduce(
                   (total, next) => total.concat(next), []
-                ), 'name').map(
+                ), 'name').sort((a,b) => a.price > b.price).map(
                   product =>
                     <Panel>
                       <Col xs={4}>
