@@ -8,6 +8,7 @@ import LogIn from './LogIn'
 import ResultView from './ResultsView'
 import SearchMain from './SearchMain'
 import Footer from './Footer'
+import CompareWindow from './CompareWindow'
 export default class App extends React.Component {
 
 
@@ -16,7 +17,7 @@ export default class App extends React.Component {
       <Router>
         <div>
           <LogIn/>
-
+        <CompareWindow />
        <Home/>
         <SearchMain />
 
