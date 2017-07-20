@@ -10,6 +10,7 @@ import './ResultsFilter.css'
 import {fetchShops} from '../state/shops'
 import {activateFilter} from '../state/productFilters'
 import './CompareWindow.css'
+import Comparison from './Comparison'
 
 
 export default connect(
@@ -34,7 +35,7 @@ export default connect(
       return (
         <div className="compare-window">
           <div className="compare-items">
-
+          <Comparison />
           </div>
 
         </div>
