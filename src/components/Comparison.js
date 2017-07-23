@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {toggle} from '../state/comparedProducts'
-import {Table} from 'react-bootstrap'
+import {Table, Grid} from 'react-bootstrap'
 
 export default connect(
   state => ({
@@ -32,8 +32,8 @@ export default connect(
       const attributes = Object.keys(dataToDisplay[0])
 
       return (
-        <div>
-          <Table>
+        <Grid>
+            <Table striped bordered condensed hover>
             <tbody>
             {
               attributes.map(
@@ -52,7 +52,7 @@ export default connect(
             }
             </tbody>
           </Table>
-        </div>
+        </Grid>
       )
     }
 
