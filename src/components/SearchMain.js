@@ -47,7 +47,7 @@ export default connect(
           <DropdownButton
             componentClass={InputGroup.Button}
             id="input-dropdown-addon"
-            title={this.props.activeFilterName || 'Kategorie'}
+            title={this.props.activeFilterName || <span className="hidden-xs">Kategorie</span>}
             style={{borderRadius: 0}}
             bsSize="large"
             onSelect={this.props.activateFilter}
