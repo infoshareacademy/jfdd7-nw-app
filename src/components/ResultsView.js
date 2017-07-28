@@ -1,17 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import uniqBy from 'lodash.uniqby'
 import {
   Col,
   Row,
   Grid,
   Button,
+  Image,
   Table
 } from 'react-bootstrap'
 import './ResultsView.css'
 import ResultsFilter from './ResultsFilter'
-import {toggle } from '../state/comparedProducts'
+import {toggle} from '../state/comparedProducts'
 
 export default connect(
   state => ({
@@ -86,70 +87,59 @@ export default connect(
         item => item.price < this.props.price[1] && item.price > this.props.price[0]
       )
 
-
       const uniqueProducts = uniqBy(allProducts, 'name')
 
       return (
-        <div className="Result">
-          <Grid>
-            <Row>
-              <Col sm={3}>
-                <ResultsFilter/>
-              </Col>
-              <Col sm={9}>
-
-                { error === null ? null : <p>{error.message}</p> }
-                { fetching === false ? null : <p>Fetching data...</p>}
-                { uniqueProducts.map(
-                    product => (
-                      <Link to={'/product-page-view/' + product.name}>
-
-                      <Row className="ResultItem">
-                        <Col sm={2} className="resultPhoto">
-                          <div>
-                            <img width={200} height={200} alt=""
-                                 src={process.env.PUBLIC_URL + '/images/smartphones/' + product.name + '.jpg'}/>
-                          </div>
-                        </Col>
-                        <Col sm={7}>
-                          <Table bordered condensed hover>
-                            <tr>
-                              <td>Przekątna ekranu: {product.screenSize} "</td>
-                            </tr>
-                            <tr>
-                              <td>Wbudowany aparat cyfrowy: {product.camera} Mpix</td>
-                            </tr>
-                            <tr>
-                              <td>Wbudowana pamięć: {product.memory} GB</td>
-                            </tr>
-                            <tr>
-                              <td>Obsługa kart pamięci: {product.slotSd}</td>
-                            </tr>
-                          </Table>
-                        </Col>
-                        <Col sm={3}>
-                          <div>
-                            <h1 className="resultName">{product.name} </h1>
-                          </div>
-                          <div className="resultPrice">{product.price + ' zł'}</div>
-
-                          <Button className="ButtonCompare" onClick={event => {
-                            this.props.toggleCompare(product.id)
-                            event.preventDefault()
-                          }}>
-                            Porównaj
-                          </Button>
-
-                        </Col>
-                      </Row>
-                      </Link>
-                    )
+        <Grid>
+          <Row className="Result">
+            <Col xs={12} sm={3}>
+              <ResultsFilter/>
+            </Col>
+            <Col sm={9}>
+              {error === null ? null : <p>{error.message}</p>}
+              {fetching === false ? null : <p>Fetching data...</p>}
+              {uniqueProducts.map(
+                product => (
+                <Row className="ResultItem">
+                  <Col sm={3} className="resultPhoto">
+                    <Link to={'/product-page-view/' + product.name}>
+                      <Image src={process.env.PUBLIC_URL + '/images/smartphones/' + product.name + '.jpg'}
+                             responsive/>
+                    </Link>
+                  </Col>
+                  <Col sm={5}>
+                    <Table condensed hover>
+                    <tr>
+                      <td>Przekątna ekranu: {product.screenSize} "</td>
+                    </tr>
+                    <tr>
+                      <td>Wbudowany aparat cyfrowy: {product.camera} Mpix</td>
+                    </tr>
+                    <tr>
+                      <td>Wbudowana pamięć: {product.memory} GB</td>
+                    </tr>
+                    <tr>
+                      <td>Obsługa kart pamięci: {product.slotSd}</td>
+                    </tr>
+                    </Table>
+                  </Col>
+                  <Col sm={4}>
+                    <p className="resultName">{product.name}</p>
+                    <p className="resultPrice">{product.price + ' zł'}</p>
+                    <Button className="ButtonCompare" onClick={event => {
+                    this.props.toggleCompare(product.id)
+                    event.preventDefault()
+                    }}>
+                    Porównaj
+                    </Button>
+                  </Col>
+                </Row>
                   )
-                }
-              </Col>
-            </Row>
-          </Grid>
-        </div>
+                )
+              }
+            </Col>
+          </Row>
+        </Grid>
       )
     }
   }
