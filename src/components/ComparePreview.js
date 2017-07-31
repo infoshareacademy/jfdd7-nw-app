@@ -31,10 +31,9 @@ export default connect(
             pageWrapId={"page-wrap"}
             outerContainerId={"outer-container"}
             customBurgerIcon={<Button>Porównanie</Button>}>
-            <Link to="/comparison">
+            <Link style={{marginBottom: "15%"}} to="/comparison">
               Przejdź do porównywarki
             </Link>
-            <br/>
             {
               dataToDisplay.filter(
                 product => this.props.productsIds.includes(product.id)

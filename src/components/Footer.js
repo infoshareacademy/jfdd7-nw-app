@@ -1,7 +1,7 @@
 import React from 'react'
-import {
+/*import {
   Col,
-} from 'react-bootstrap'
+} from 'react-bootstrap'*/
 
 import './Footer.css'
 
@@ -11,7 +11,7 @@ export default class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="container">
-          <div className="text-center container-list">
+          {/*<div className="text-center container-list">
             <Col xs={6}>
               <a className="hvr-underline-from-left footer-list">Reklama w serwisie</a>
             </Col>
@@ -38,7 +38,7 @@ export default class Footer extends React.Component {
             <a href="http://www.youtube.com"  target="_blank" rel="noreferrer noopener" ><img
               src={process.env.PUBLIC_URL + '/images/footer/youtube.svg'} alt="youtube" height="48"/></a>
 
-          </div>
+          </div>*/}
           <div className="col-xs-12 text-center">
             <span className="allrights">2017 © Nie Wiem Team - Jarosław Michalski / Marcin Kopystyński / Oskar Feliński / Mateusz Targowski. Wszelkie prawa zastrzeżone. </span>
           </div>

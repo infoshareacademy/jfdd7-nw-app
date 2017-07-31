@@ -117,13 +117,13 @@ export default connect(
                               <td>Przekątna ekranu: {product.screenSize} "</td>
                             </tr>
                             <tr>
-                              <td>Wbudowany aparat cyfrowy: {product.camera} Mpix</td>
+                              <td>Aparat cyfrowy: {product.camera} Mpix</td>
                             </tr>
                             <tr>
                               <td>Wbudowana pamięć: {product.memory} GB</td>
                             </tr>
                             <tr>
-                              <td>Obsługa kart pamięci: {product.slotSd}</td>
+                              <td>Obsługa kart pamięci: {product.slotSD}</td>
                             </tr>
                           </Table>
                         </Col>

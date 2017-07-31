@@ -63,7 +63,7 @@ export default connect(
 
       return (
         <div className="ResultFilter">
-          <span id="header-filter-result">Zawęź wyniki wyszukiwania:</span>
+          <span id="header-filter-result">Filtruj wyniki wyszukiwania:</span>
           <ButtonGroup vertical block>
             <span className="filter-list">Producent</span>
             <DropdownButton title={selectedNameFilter ? filterNames[selectedNameFilter] : ''}
