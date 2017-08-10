@@ -88,12 +88,12 @@
     color: red;
 }
 
-@media screen and (max-width: 991px) and (min-width: 779px){
+@media screen and (max-width: 992px) and (min-width: 785px){
 .ResultItem{
     width: 110%;
 }
 }
-@media screen and (max-width: 769px){
+@media screen and (max-width: 785px){
     .resultPhoto{
         text-align: center;
     }
@@ -105,7 +105,7 @@
 }
 
 
-@media screen and (min-width: 991px){
+@media screen and (min-width: 992px){
     .priceAndName{
         margin-left: 3.7em;
     }

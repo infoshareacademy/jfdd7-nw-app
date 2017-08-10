@@ -6,8 +6,7 @@ import {
   Col,
   Row,
   Grid,
-  Button,
-  Table
+  Button
 } from 'react-bootstrap'
 import './ResultsView.css'
 import ResultsFilter from './ResultsFilter'
@@ -67,9 +66,6 @@ export default connect(
       ).reduce(
         (total, next) => total.concat(next), []
       ).filter(
-        /* wyszukiwanie po pierwszych znakach
-       product => product.name.toLowerCase().indexOf(this.props.searchPhrase.toLowerCase()) === 0
-      ).filter(*/
         product => product.name.toLowerCase().includes(this.props.searchPhrase.toLowerCase())
       ).filter(
         product => product.category === this.props.activeFilter
@@ -110,20 +106,10 @@ export default connect(
                           </div>
                         </Col>
                         <Col sm={4} className="ResultSpec">
-                          <Table condensed>
-                            <tr>
-                              <td>-Przekątna ekranu: {product.screenSize} "</td>
-                            </tr>
-                            <tr>
-                              <td>-Aparat cyfrowy: {product.camera} Mpix</td>
-                            </tr>
-                            <tr>
-                              <td>-Wbudowana pamięć: {product.memory} GB</td>
-                            </tr>
-                            <tr>
-                              <td>-Obsługa kart pamięci: {product.slotSD}</td>
-                            </tr>
-                          </Table>
+                              <p>-Przekątna ekranu: {product.screenSize} "</p>
+                              <p>-Aparat cyfrowy: {product.camera} Mpix</p>
+                              <p>-Wbudowana pamięć: {product.memory} GB</p>
+                              <p>-Obsługa kart pamięci: {product.slotSD}</p>
                         </Col>
                         <Col sm={4} className="priceAndName">
                           <div>
